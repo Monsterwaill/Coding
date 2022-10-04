@@ -1,0 +1,23 @@
+modem = peripheral.find("modem") or error("No Modem Allocated")
+modem.open(43)
+ 
+print("")
+print("1, Needed in Town")
+print("2, Needed in Shopping District")
+print("3, Needed in Ben's Base")
+print("Please choose from 1-3")
+print("")
+io.write("What is your emergency? ")
+emergency = io.read()
+ 
+if emergency == 1 then
+modem.transmit(43, 44, "Town") end
+ 
+if emergency == 2 then
+modem.transmit(43, 44, "Shopping District") end
+ 
+if emergency == 3 then
+modem.transmit(43, 44, "Ben's Base") end
+ 
+print("Emergency sent")
+shell.run("startup")
